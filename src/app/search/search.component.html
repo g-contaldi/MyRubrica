@@ -1,0 +1,43 @@
+<div id="search-component">
+  <div class="page-header">
+    <h3>Cerca contatti</h3>
+  </div>
+
+  <input class="form-control" placeholder="Ricerca..." #searchBox id="search-box"
+         (keyup)="search(searchBox.value)"/>
+
+  <div class="media" *ngFor="let c of listContact$ | async"
+       data-toggle="modal" data-target="#myModal"
+       (click)="selectedItem(c)">
+    <div class="media-left">
+      <img src="../../assets/img/img_avatar1.png" class="media-object" style="width:60px">
+    </div>
+    <div class="media-body">
+      <h4 class="media-heading">{{c.nome}} {{c.cognome}}</h4>
+      <p>{{c.tel}} - {{c.mail}}</p>
+    </div>
+  </div>
+
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">{{selected.nome}} {{selected.cognome}}</h4>
+        </div>
+        <div class="modal-body">
+          <p><span class="glyphicon glyphicon-earphone gliphy-style"></span> {{selected.tel}}</p>
+          <p><span class="glyphicon glyphicon-envelope gliphy-style"></span> {{selected.mail}}</p>
+        </div>
+        <div class="modal-footer">
+
+          <button type="button" class="btn btn-success" routerLink="/add/{{selected.id}}"
+                  data-toggle="tooltip" title="Modifica" data-dismiss="modal">
+            <span class="glyphicon glyphicon-pencil"></span></button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

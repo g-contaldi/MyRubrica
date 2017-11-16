@@ -1,0 +1,17 @@
+.go-back {
+    float: right;
+    margin-right: 1em;
+}
+
+.save {
+    float: right;
+}
+
+.delete {
+    float: right;
+    margin-top: -40px;
+}
+
+.page-header {
+    margin: 10px 0 20px;
+}

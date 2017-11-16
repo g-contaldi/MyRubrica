@@ -1,0 +1,23 @@
+table.fixed {
+    table-layout: fixed;
+}
+
+table.fixed td {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+table a:not(.btn), .table a:not(.btn) {
+    text-decoration: none;
+}
+
+.page-header {
+    margin: 10px 0 20px;
+}
+
+.gliphy-style {
+    margin-right: 10px;
+}
+
+
